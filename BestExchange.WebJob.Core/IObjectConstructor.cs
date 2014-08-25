@@ -1,6 +1,6 @@
-﻿namespace BestExchange.WebJob
+﻿namespace BestExchange.WebJob.Core
 {
-    internal interface IObjectConstructor
+    public interface IObjectConstructor
     {
         T CreateObjectInstance<T>(string fullTypeName)
             where T : class;

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using BestExchange.WebJob.Contract;
 
-namespace BestExchange.WebJob
+namespace BestExchange.WebJob.Core
 {
-    internal interface IAgentManager
+    public interface IAgentManager
     {
         IEnumerable<IAgent> GetAgents();
     }

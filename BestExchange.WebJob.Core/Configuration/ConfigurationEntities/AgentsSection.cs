@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace BestExchange.WebJob.Configuration.ConfigurationEntities
+namespace BestExchange.WebJob.Core.Configuration.ConfigurationEntities
 {
     internal class AgentsSection : ConfigurationSection
     {

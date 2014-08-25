@@ -1,11 +1,14 @@
 ﻿using BestExchange.Common.IoC;
-using BestExchange.WebJob.Configuration;
+using BestExchange.WebJob.Contract;
+using BestExchange.WebJob.Core;
+using BestExchange.WebJob.Core.Configuration;
 
 namespace BestExchange.WebJob
 {
     internal class Bootstrapper
     {
         private IContainer _container;
+        private IAgentManager _agentManager;
 
         public Bootstrapper(IContainer container)
         {
@@ -19,15 +22,22 @@ namespace BestExchange.WebJob
                 .RegisterType<IAgentManager, AgentManager>();
         }
 
-
         public void Run()
         {
+            _agentManager = _container.ResolveType<IAgentManager>();
             
+            foreach (IAgent agent in _agentManager.GetAgents())
+            {
+                agent.Run();       
+            }
         }
 
         public void Stop()
         {
-            
+            foreach (IAgent agent in _agentManager.GetAgents())
+            {
+                agent.Stop();
+            }
         }
     }
 }

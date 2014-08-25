@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace BestExchange.WebJob.Configuration.ConfigurationEntities
+namespace BestExchange.WebJob.Core.Configuration.ConfigurationEntities
 {
     [ConfigurationCollection(typeof(AgentElement), AddItemName = "agent")]
     internal class AgentsCollection : ConfigurationElementCollection

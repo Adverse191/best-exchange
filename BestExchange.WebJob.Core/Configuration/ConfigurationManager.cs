@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using BestExchange.WebJob.Configuration.ConfigurationEntities;
+using BestExchange.WebJob.Core.Configuration.ConfigurationEntities;
 
-namespace BestExchange.WebJob.Configuration
+namespace BestExchange.WebJob.Core.Configuration
 {
-    internal class FileConfigurationManager : IConfigurationManager
+    public class FileConfigurationManager : IConfigurationManager
     {
         private const string AgentsSectionName = "agentsConfigSection";
 

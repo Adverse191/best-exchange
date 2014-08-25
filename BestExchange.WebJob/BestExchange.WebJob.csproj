@@ -48,7 +48,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -56,16 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgentManager.cs" />
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Configuration\ConfigurationEntities\AgentElement.cs" />
-    <Compile Include="Configuration\ConfigurationEntities\AgentsCollection.cs" />
-    <Compile Include="Configuration\ConfigurationEntities\AgentsSection.cs" />
-    <Compile Include="Configuration\ConfigurationManager.cs" />
-    <Compile Include="Configuration\IConfigurationManager.cs" />
-    <Compile Include="IAgentManager.cs" />
-    <Compile Include="IObjectConstructor.cs" />
-    <Compile Include="ObjectConstructor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -100,6 +90,10 @@
     <ProjectReference Include="..\BestExchange.WebJob.Contract\BestExchange.WebJob.Contract.csproj">
       <Project>{51810049-4f59-4cc0-89c2-6481d0bbe064}</Project>
       <Name>BestExchange.WebJob.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BestExchange.WebJob.Core\BestExchange.WebJob.Core.csproj">
+      <Project>{0ef77e25-ba2c-4522-ad4e-6e4d22f15c22}</Project>
+      <Name>BestExchange.WebJob.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

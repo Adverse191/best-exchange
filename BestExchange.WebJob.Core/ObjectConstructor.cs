@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace BestExchange.WebJob
+namespace BestExchange.WebJob.Core
 {
-    internal class ObjectConstructor : IObjectConstructor
+    public class ObjectConstructor : IObjectConstructor
     {
         public T CreateObjectInstance<T>(string fullTypeName)
             where T : class 

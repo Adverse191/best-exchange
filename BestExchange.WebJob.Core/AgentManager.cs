@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using BestExchange.WebJob.Configuration;
-using BestExchange.WebJob.Configuration.ConfigurationEntities;
 using BestExchange.WebJob.Contract;
+using BestExchange.WebJob.Core.Configuration;
+using BestExchange.WebJob.Core.Configuration.ConfigurationEntities;
 
-namespace BestExchange.WebJob
+namespace BestExchange.WebJob.Core
 {
-    internal class AgentManager : IAgentManager
+    public class AgentManager : IAgentManager
     {
         private IObjectConstructor _objectConstructor;
         private IConfigurationManager _configurationManager;
