@@ -2,12 +2,12 @@
 
 namespace BestExchange.WebJob.Core.Configuration.ConfigurationEntities
 {
-    internal class AgentsSection : ConfigurationSection
+    public class AgentsSection : ConfigurationSection
     {
-        [ConfigurationProperty("agentsConfigSection")]
+        [ConfigurationProperty("agents")]
         public AgentsCollection Agents
         {
-            get { return ((AgentsCollection)(base["agentsConfigSection"])); }
+            get { return ((AgentsCollection)(base["agents"])); }
         }
     }
 }

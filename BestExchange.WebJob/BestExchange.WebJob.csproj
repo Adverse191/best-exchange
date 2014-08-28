@@ -95,9 +95,13 @@
       <Project>{0ef77e25-ba2c-4522-ad4e-6e4d22f15c22}</Project>
       <Name>BestExchange.WebJob.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BestExchange.WebJob.CurrencyRateAgent\BestExchange.WebJob.CurrencyRateAgent.csproj">
+      <Project>{bd9f4881-3f3a-4163-981e-2b7b4f114ea4}</Project>
+      <Name>BestExchange.WebJob.CurrencyRateAgent</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Microsoft.Web.WebJobs.Publish.1.0.0\tools\webjobs.targets" Condition="Exists('..\packages\Microsoft.Web.WebJobs.Publish.1.0.0\tools\webjobs.targets')" />
+  <Import Project="..\packages\Microsoft.Web.WebJobs.Publish.1.0.1\tools\webjobs.targets" Condition="Exists('..\packages\Microsoft.Web.WebJobs.Publish.1.0.1\tools\webjobs.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
