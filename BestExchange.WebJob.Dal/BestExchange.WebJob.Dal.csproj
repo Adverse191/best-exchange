@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{08526BEC-04A4-48B6-8C99-AA10D2AAF8E7}</ProjectGuid>
+    <ProjectGuid>{4C73A1CF-68F5-4A3A-8F05-2680BE9A7AF8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BestExchange.WebJob.CurrencyRateAgent.Dal</RootNamespace>
-    <AssemblyName>BestExchange.WebJob.CurrencyRateAgent.Dal</AssemblyName>
+    <RootNamespace>BestExchange.WebJob.Dal</RootNamespace>
+    <AssemblyName>BestExchange.WebJob.Dal</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

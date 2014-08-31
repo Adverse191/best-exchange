@@ -1,17 +1,21 @@
-﻿using BestExchange.WebJob.Contract;
+﻿using System.Diagnostics;
+using BestExchange.Common.IoC;
+using BestExchange.WebJob.Contract;
 
 namespace BestExchange.WebJob.CurrencyRateAgent
 {
     public class Agent : IAgent
     {
-        public void Run()
+        private IContainer _container;
+
+        public void Invoke()
         {
-            throw new System.NotImplementedException();
+
         }
 
-        public void Stop()
+        public void Initialize(IContainer container)
         {
-            throw new System.NotImplementedException();
+            _container = container;
         }
     }
 }

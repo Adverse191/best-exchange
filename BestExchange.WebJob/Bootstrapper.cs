@@ -22,21 +22,20 @@ namespace BestExchange.WebJob
                 .RegisterType<IAgentManager, AgentManager>();
         }
 
-        public void Run()
+        public void InitializeApplication()
         {
             _agentManager = _container.ResolveType<IAgentManager>();
-            
-            foreach (IAgent agent in _agentManager.GetAgents())
+            foreach (IAgent agent in _agentManager.Agents)
             {
-                agent.Run();       
+                agent.Initialize(_container);
             }
         }
 
-        public void Stop()
+        public void Run()
         {
-            foreach (IAgent agent in _agentManager.GetAgents())
+            foreach (IAgent agent in _agentManager.Agents)
             {
-                agent.Stop();
+                agent.Invoke();       
             }
         }
     }

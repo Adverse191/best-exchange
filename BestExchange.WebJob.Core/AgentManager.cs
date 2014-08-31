@@ -9,14 +9,29 @@ namespace BestExchange.WebJob.Core
     {
         private IObjectConstructor _objectConstructor;
         private IConfigurationManager _configurationManager;
-
+        private IEnumerable<IAgent> _agents;
+ 
         public AgentManager(IObjectConstructor objectConstructor, IConfigurationManager configurationManager)
         {
             _objectConstructor = objectConstructor;
             _configurationManager = configurationManager;
         }
 
-        public IEnumerable<IAgent> GetAgents()
+        public IEnumerable<IAgent> Agents
+        {
+            get
+            {
+                //TODO: Thread safe?
+                if (_agents == null)
+                {
+                    _agents = CreateAgents();
+                }
+
+                return _agents;
+            }
+        }
+
+        private IEnumerable<IAgent> CreateAgents()
         {
             IEnumerable<AgentElement> agentsConfiguration = _configurationManager.GetAgentsConfiguration();
             IList<IAgent> agents = new List<IAgent>();

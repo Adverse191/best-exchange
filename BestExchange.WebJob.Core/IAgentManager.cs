@@ -5,6 +5,6 @@ namespace BestExchange.WebJob.Core
 {
     public interface IAgentManager
     {
-        IEnumerable<IAgent> GetAgents();
+        IEnumerable<IAgent> Agents { get; }
     }
 }

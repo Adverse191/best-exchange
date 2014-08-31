@@ -43,6 +43,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BestExchange.Common\BestExchange.Common.csproj">
+      <Project>{bc0f65b4-7118-4eea-9421-ba0cdeb3d69a}</Project>
+      <Name>BestExchange.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BestExchange.WebJob.Contract\BestExchange.WebJob.Contract.csproj">
       <Project>{51810049-4f59-4cc0-89c2-6481d0bbe064}</Project>
       <Name>BestExchange.WebJob.Contract</Name>
