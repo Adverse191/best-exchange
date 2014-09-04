@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0EF77E25-BA2C-4522-AD4E-6E4D22F15C22}</ProjectGuid>
+    <ProjectGuid>{DCBE11EF-B309-44A3-B998-A6D386F31154}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BestExchange.WebJob.Core</RootNamespace>
@@ -31,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,23 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgentManager.cs" />
-    <Compile Include="Configuration\ConfigurationEntities\AgentElement.cs" />
-    <Compile Include="Configuration\ConfigurationEntities\AgentsCollection.cs" />
-    <Compile Include="Configuration\ConfigurationEntities\AgentsSection.cs" />
-    <Compile Include="Configuration\ConfigurationManager.cs" />
-    <Compile Include="Configuration\IConfigurationManager.cs" />
-    <Compile Include="IAgentManager.cs" />
-    <Compile Include="IObjectConstructor.cs" />
-    <Compile Include="ObjectConstructor.cs" />
+    <Compile Include="BankAgents\BelaruskyNarodnyBankAgent.cs" />
+    <Compile Include="BankInformationAgentManager.cs" />
+    <Compile Include="CurrencyRatio.cs" />
+    <Compile Include="DataParsers\BelaruskyNarodnyDataParser.cs" />
+    <Compile Include="FilialInformation.cs" />
+    <Compile Include="IBankAgent.cs" />
+    <Compile Include="IDataParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BestExchange.WebJob.Contract\BestExchange.WebJob.Contract.csproj">
-      <Project>{51810049-4f59-4cc0-89c2-6481d0bbe064}</Project>
-      <Name>BestExchange.WebJob.Contract</Name>
+    <ProjectReference Include="..\BestExchange.Common\BestExchange.Common.csproj">
+      <Project>{bc0f65b4-7118-4eea-9421-ba0cdeb3d69a}</Project>
+      <Name>BestExchange.Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -9,7 +9,6 @@ namespace BestExchange.WebJob
         {
             IContainer container = new Container();
             Bootstrapper bootstrapper = new Bootstrapper(container);
-            bootstrapper.InitializeContainer();
             bootstrapper.Run();
         }
     }

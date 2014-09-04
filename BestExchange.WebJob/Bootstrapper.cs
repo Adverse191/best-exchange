@@ -1,42 +1,21 @@
 ﻿using BestExchange.Common.IoC;
-using BestExchange.WebJob.Contract;
 using BestExchange.WebJob.Core;
-using BestExchange.WebJob.Core.Configuration;
 
 namespace BestExchange.WebJob
 {
     internal class Bootstrapper
     {
         private IContainer _container;
-        private IAgentManager _agentManager;
 
         public Bootstrapper(IContainer container)
         {
             _container = container;
         }
 
-        public void InitializeContainer()
+        internal void Run()
         {
-            _container.RegisterType<IObjectConstructor, ObjectConstructor>()
-                .RegisterType<IConfigurationManager, FileConfigurationManager>()
-                .RegisterType<IAgentManager, AgentManager>();
-        }
-
-        public void InitializeApplication()
-        {
-            _agentManager = _container.ResolveType<IAgentManager>();
-            foreach (IAgent agent in _agentManager.Agents)
-            {
-                agent.Initialize(_container);
-            }
-        }
-
-        public void Run()
-        {
-            foreach (IAgent agent in _agentManager.Agents)
-            {
-                agent.Invoke();       
-            }
+            BankInformationAgentManager manager = new BankInformationAgentManager(_container);
+            manager.UpdateCurrencyInformation();
         }
     }
 }

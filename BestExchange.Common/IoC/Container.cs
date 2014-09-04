@@ -23,5 +23,14 @@ namespace BestExchange.Common.IoC
         {
             return _container.Resolve<T>();
         }
+
+
+        public IContainer RegisterType<TFrom, TTo>(string name)
+            where TFrom : class
+            where TTo : TFrom
+        {
+            _container.RegisterType<TFrom, TTo>(name);
+            return this;
+        }
     }
 }
