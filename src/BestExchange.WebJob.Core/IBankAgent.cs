@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using BestExchange.Entity;
 
 namespace BestExchange.WebJob.Core
 {

@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Globalization;
 
-namespace BestExchange.WebJob.Core
+namespace BestExchange.Entity
 {
-    internal class FilialInformation
+    public class FilialInformation
     {
         public string Address { get; set; }
+        public Bank Bank { get; set; }
         public IEnumerable<CurrencyRatio> CurrencyRatios { get; set; }
     }
 }

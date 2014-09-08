@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DCBE11EF-B309-44A3-B998-A6D386F31154}</ProjectGuid>
+    <ProjectGuid>{3FA3167C-681E-44F3-84FA-4A5AD8806A2F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BestExchange.WebJob.Core</RootNamespace>
-    <AssemblyName>BestExchange.WebJob.Core</AssemblyName>
+    <RootNamespace>BestExchange.Dal</RootNamespace>
+    <AssemblyName>BestExchange.Dal</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,24 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BankAgents\BelaruskyNarodnyBankAgent.cs" />
-    <Compile Include="BankInformationAgentManager.cs" />
-    <Compile Include="DataParsers\BelaruskyNarodnyDataParser.cs" />
-    <Compile Include="IBankAgent.cs" />
-    <Compile Include="IDataParser.cs" />
+    <Compile Include="IBankRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BestExchange.Common\BestExchange.Common.csproj">
-      <Project>{bc0f65b4-7118-4eea-9421-ba0cdeb3d69a}</Project>
-      <Name>BestExchange.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BestExchange.Entity\BestExchange.Entity.csproj">
       <Project>{46838037-c2d9-4d9f-8de2-54f3b0776921}</Project>
       <Name>BestExchange.Entity</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

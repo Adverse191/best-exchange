@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using System.Xml.Linq;
+using BestExchange.Entity;
 
 namespace BestExchange.WebJob.Core.DataParsers
 {

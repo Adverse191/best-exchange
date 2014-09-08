@@ -1,8 +1,6 @@
-﻿using System.Globalization;
-
-namespace BestExchange.WebJob.Core
+﻿namespace BestExchange.Entity
 {
-    internal class CurrencyRatio
+    public class CurrencyRatio
     {
         public decimal BuyCurencyRate { get; set; }
         public decimal SaleCurencyRate { get; set; }

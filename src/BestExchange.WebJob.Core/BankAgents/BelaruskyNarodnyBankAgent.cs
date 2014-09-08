@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net;
-using System.Text;
-using System.Xml.Linq;
+using BestExchange.Entity;
 
 namespace BestExchange.WebJob.Core.BankAgents
 {
     internal class BelaruskyNarodnyBankAgent : IBankAgent
     {
         private const string DataUrl = "http://bnb.by/currencies/ActualRates.xml";
-
+        private const string BankName = "BelaruskyNarodnyBank";
         private IDataParser _dataParser;
-        
+        private Bank _bank;
 
         public BelaruskyNarodnyBankAgent(IDataParser dataParser)
         {
             _dataParser = dataParser;
+            _bank = new Bank {Name = BankName};
         }
 
         public IEnumerable<FilialInformation> GetFilialsInformation()
@@ -25,7 +22,14 @@ namespace BestExchange.WebJob.Core.BankAgents
             using (WebClient client = new WebClient())
             {
                 byte[] rawData = client.DownloadData(DataUrl);
-                return _dataParser.ParseFilialInformations(rawData);
+                IEnumerable<FilialInformation> filialInformations = _dataParser.ParseFilialInformations(rawData);
+
+                foreach (FilialInformation filialInformation in filialInformations)
+                {
+                    filialInformation.Bank = _bank;
+                }
+
+                return filialInformations;
             }
         }
     }

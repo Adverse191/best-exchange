@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using BestExchange.Common.IoC;
+using BestExchange.Entity;
 using BestExchange.WebJob.Core.BankAgents;
 
 namespace BestExchange.WebJob.Core
